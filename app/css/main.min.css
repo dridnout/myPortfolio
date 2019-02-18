@@ -1,15 +1,56 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500,500i,700,700i&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+/* fonts */
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Black.eot");
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Helvetica/HelveticaNeueCyr-Black.woff") format("woff"), url("../fonts/Helvetica/HelveticaNeueCyr-Black.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Roman.eot");
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/Helvetica/HelveticaNeueCyr-Roman.woff") format("woff"), url("../fonts/Helvetica/HelveticaNeueCyr-Roman.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Thin.eot");
+  src: url("../fonts/Helvetica/HelveticaNeueCyr-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Helvetica/HelveticaNeueCyr-Thin.woff") format("woff"), url("../fonts/Helvetica/HelveticaNeueCyr-Thin.ttf") format("truetype"); }
+
+.theme_dark {
+  background-color: #191919; }
+
+.spotlight {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  background: #212121;
+  background: -webkit-radial-gradient(40% 5%, circle farthest-corner, #3a3a3f 20%, #212121 55%);
+  background: -ms-radial-gradient(40% 5%, circle farthest-corner, #3a3a3f 20%, #212121 55%);
+  z-index: -1; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
-  position: relative;
   overflow-x: hidden;
   min-height: 100%;
   min-width: 320px;
   z-index: 0;
-  font-family: "Roboto Mono", monospace; }
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   padding: 0; }
@@ -44,8 +85,175 @@ a:hover {
 .right-col {
   float: right; }
 
-.present {
-  padding-left: 40px; }
+.logo {
+  background-color: #f0004d;
+  width: 80px;
+  height: 80px;
+  position: relative; }
+
+.logo__img {
+  background: url(../img/logo.svg) 0 0 no-repeat;
+  width: 65px;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+
+header {
+  padding: 50px 50px 0 50px;
+  position: fixed;
+  width: 100%; }
+  header:before, header:after {
+    content: '';
+    clear: both;
+    display: table; }
+
+h1 {
+  font: 800 60px/60px "HelveticaNeue", sans-serif;
+  color: #fff; }
+
+.menu-btn {
+  position: relative; }
+
+.menu-btn__text {
+  color: #fff;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  margin-right: 72px;
+  display: inline-block;
+  position: relative; }
+
+.menu-btn__text_splash {
+  -webkit-animation: overBgOpacity .15s ease-in-out;
+          animation: overBgOpacity .15s ease-in-out; }
+  .menu-btn__text_splash:before {
+    content: '';
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: overBgAnim .3s ease-in-out .1s;
+            animation: overBgAnim .3s ease-in-out .1s; }
+
+@-webkit-keyframes overBgAnim {
+  0% {
+    width: 0;
+    left: 0; }
+  50% {
+    width: 100%;
+    left: 0; }
+  100% {
+    width: 0%;
+    left: 100%; } }
+
+@keyframes overBgAnim {
+  0% {
+    width: 0;
+    left: 0; }
+  50% {
+    width: 100%;
+    left: 0; }
+  100% {
+    width: 0%;
+    left: 100%; } }
+
+@-webkit-keyframes overBgOpacity {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes overBgOpacity {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.menu-btn__button {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 0;
+  width: 42px;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+  border: 0; }
+
+.menu-btn__button-span {
+  width: 32px;
+  height: 2px;
+  right: 0;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  -webkit-transition-property: background;
+  -o-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 0.15s;
+       -o-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease-in-out;
+       -o-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s; }
+  .menu-btn__button-span:before, .menu-btn__button-span:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: -webkit-calc(100% + 10px);
+    width: calc(100% + 10px);
+    height: 2px;
+    background: #fff;
+    -webkit-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.25s;
+         -o-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+    -webkit-transition-timing-function: ease-in-out;
+         -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+    -webkit-transition-delay: 0s;
+         -o-transition-delay: 0s;
+            transition-delay: 0s; }
+  .menu-btn__button-span:before {
+    top: -9px;
+    -webkit-transform: translateY(0) rotate(0deg);
+        -ms-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg); }
+  .menu-btn__button-span:after {
+    top: 9px;
+    -webkit-transform: translateY(0) rotate(0deg);
+        -ms-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg); }
+  .menu-btn__button-span.button-toggle {
+    background: transparent; }
+    .menu-btn__button-span.button-toggle:before {
+      top: 0px;
+      -webkit-transform: translateY(-50%) rotate(225deg);
+          -ms-transform: translateY(-50%) rotate(225deg);
+              transform: translateY(-50%) rotate(225deg); }
+    .menu-btn__button-span.button-toggle:after {
+      top: 0px;
+      -webkit-transform: translateY(-50%) rotate(-225deg);
+          -ms-transform: translateY(-50%) rotate(-225deg);
+              transform: translateY(-50%) rotate(-225deg); }
+
+.content {
+  padding-top: 180px; }
 
 /* hovers */
 /* media query */

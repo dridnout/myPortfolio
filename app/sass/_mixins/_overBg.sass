@@ -1,0 +1,27 @@
+@mixin overBg($height, $background: #fff)
+	animation: overBgOpacity .15s ease-in-out 
+	&:before
+		content: ''
+		height: $height
+		background: $background
+		position: absolute
+		top: 0
+		left: 0
+		animation: overBgAnim .3s ease-in-out .1s
+	@keyframes overBgAnim
+		0%
+			width: 0
+			left: 0
+		50%
+			width: 100%
+			left: 0
+		100%
+			width: 0%
+			left: 100%	
+	@keyframes overBgOpacity
+		0%
+			opacity: 1
+		50%
+			opacity: 0
+		100%
+			opacity: 1
