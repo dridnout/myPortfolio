@@ -1,5 +1,17 @@
 $(document).ready(function() {
 
+	// fullpage init
+	
+	$('#fullpage').fullpage({
+		//options here
+		autoScrolling:false,
+		scrollHorizontally: true
+	});
+
+	//methods
+	$.fn.fullpage.setAllowScrolling(false);
+
+
 	$(".menu-btn__button").click(function(){
 		$(".menu-btn__button-span").toggleClass("button-toggle");
 		
