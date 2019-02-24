@@ -37,7 +37,8 @@ gulp.task('connect', function(){
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js'
+		'app/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
+		'app/libs/fullPage/vendors/scrolloverflow.min.js'
 		])
 	.pipe(gulp.dest('app/js'))
 	// .pipe(browserSync.stream());

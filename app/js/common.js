@@ -4,12 +4,10 @@ $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		//options here
-		autoScrolling:false,
+		autoScrolling:true,
 		scrollHorizontally: true
 	});
 
-	//methods
-	$.fn.fullpage.setAllowScrolling(false);
 
 
 	$(".menu-btn__button").click(function(){
