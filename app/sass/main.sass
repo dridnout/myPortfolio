@@ -6,6 +6,7 @@
 @import "theme_dark"
 @import "_mixins/transition"
 @import "_mixins/overBg"
+@import "covers"
 
 *
 	box-sizing: border-box
@@ -78,6 +79,7 @@ header
 	position: absolute 
 	top: 0
 	width: 100%
+	z-index: 1
 	&:before,
 	&:after
 		content: ''
@@ -119,9 +121,7 @@ p
 	display: inline-block
 	position: relative
 
-.menu-btn__text_splash
-	+overBg(10px)
-	
+
 
 .menu-btn__button
 	position: absolute
@@ -220,6 +220,33 @@ p
 	left: 0
 	right: 0
 	margin: auto
+
+.social-btn_leave
+	left: -100px
+	+transitions(left, .4s, ease-in)
+.social-btn_return
+	left: 50px
+	+transitions(left, .4s, ease-in)
+
+.main-screen-content_bottom-position
+	position: absolute
+	bottom: 50px
+	left: 0
+	right: 0
+.portfolio-wrap
+	padding-top: 176px
+.portfolio-item
+	height: 160px
+	width: 100%
+	display: table
+.portfolio-item_col
+	display: table-cell
+	
+
+
+
+
+
 
 
 

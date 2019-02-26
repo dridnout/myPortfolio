@@ -4,9 +4,23 @@ $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		//options here
-		autoScrolling:true,
-		scrollHorizontally: true
+		autoScrolling: true,
+		scrollHorizontally: true,
+		scrollOverflow: true,
+		onLeave: function(origin, destination, direction){
+			// if(origin.index == 0 && direction =='down'){
+			// 	$('.social-btn').removeClass('social-btn_return');
+			// 	$('.social-btn').addClass('social-btn_leave');
+			// }
+			// if(origin.index == 1 && direction =='up'){
+			// 	$('.social-btn').removeClass('social-btn_leave');
+			// 	$('.social-btn').addClass('social-btn_return');
+			// }
+
+		}
 	});
+
+
 
 
 
